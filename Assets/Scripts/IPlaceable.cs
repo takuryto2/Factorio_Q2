@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public interface IPlaceable
 {
-    int sizeX { get; }
-    int sizeY { get; }
+    int sizeX { get; set; }
+    int sizeZ { get; set; }
     float X { get; set; }
-    float Y { get; set; }
+    float Z { get; set; }
 
 }
