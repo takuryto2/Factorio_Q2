@@ -14,25 +14,21 @@ public class PointerClick : MonoBehaviour
     Vector3 dir;
     public void OnClick(InputAction.CallbackContext context)
     {
-        test = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        dir = Camera.main.transform.forward;
-        test = test + dir;
-
-        if (Physics.Raycast(test, new Vector3(0,-1,0), out RaycastHit hit, 20))
+        
+        if (context.started)
         {
-            
+            Ray mouseRay= Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
+            if (Physics.Raycast(mouseRay, out RaycastHit hit))
             {
-                grid.CreateTileAtPosition(hit.point, aaa);
+                if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
+                {
+                    grid.CreateTileAtPosition(hit.point, aaa);
+                    return;
+                }
+
             }
         }
         
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(test, dir);
-    }
-
 }

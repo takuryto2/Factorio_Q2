@@ -10,7 +10,7 @@ public class SO_Building : ScriptableObject
 
     /*grid variable*/
     public int sizeX;
-    public int sizeY;
+    public int sizeZ;
 
     /*unit display and match variable*/
     public Mesh BuildingMesh;
