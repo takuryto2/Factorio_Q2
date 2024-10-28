@@ -15,6 +15,6 @@ MonoBehaviour:
   buildingName: SO_BuildingTemplate
   cooldownMultiplier: 1
   sizeX: 1
-  sizeY: 1
+  sizeZ: 1
   BuildingMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   recipe: []

@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2db20a2a510a2c4469a79c8c9bfe1948, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingBase: {fileID: 11400000, guid: 6d39c5ed01cd1344682129fba12f4c43, type: 2}
+  gridScaleX: 1
+  gridScaleZ: 1

@@ -10,7 +10,7 @@ public class SO_Building : ScriptableObject
 
     [Header("grid variable")]
     public int sizeX;
-    public int sizeY;
+    public int sizeZ;
 
     [Header("display and match variable")]
     /*unit display and match variable*/
