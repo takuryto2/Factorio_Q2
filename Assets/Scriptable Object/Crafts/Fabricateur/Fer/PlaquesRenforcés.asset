@@ -12,14 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: "PlaquesRenforc\xE9s"
   m_EditorClassIdentifier: 
-  inputName:
-  - plaques de fer
-  - vis
-  inputFloat:
-  - 3
-  - 12
-  outputName:
-  - "plaques renforc\xE9s"
-  outputFloat:
-  - 2
+  inputType: 0200000003000000
+  inputInt: 030000000c000000
+  outputType: 04000000
+  outputInt: 02000000
   time: 1

@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: FilDeCuivre
   m_EditorClassIdentifier: 
-  inputName:
-  - lingot de cuivre
-  inputFloat:
-  - 2
-  outputName:
-  - fil de cuivre
-  outputFloat:
-  - 2
+  inputType: 06000000
+  inputInt: 02000000
+  outputType: 07000000
+  outputInt: 02000000
   time: 1

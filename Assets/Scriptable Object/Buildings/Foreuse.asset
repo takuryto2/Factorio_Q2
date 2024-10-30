@@ -15,10 +15,10 @@ MonoBehaviour:
   buildingName: Foreuse
   cooldownMultiplier: 1
   sizeX: 1
-  sizeY: 1
+  sizeZ: 1
   BuildingMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   recipe:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d1ff50777c03d834194aca142d1f9e4c, type: 2}
+  - {fileID: 11400000, guid: 40f7d0a784a5dd046b2f9705c972d198, type: 2}
+  - {fileID: 11400000, guid: d01ae24b0ecb61d44bd73053ff5a0ebd, type: 2}
+  - {fileID: 11400000, guid: be3ac670d2562e04197d0cff633f98bb, type: 2}

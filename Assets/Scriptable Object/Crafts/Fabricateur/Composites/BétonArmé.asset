@@ -12,14 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: "B\xE9tonArm\xE9"
   m_EditorClassIdentifier: 
-  inputName:
-  - "b\xE9ton"
-  - "lingot d\u2019acier"
-  inputFloat:
-  - 5
-  - 2
-  outputName:
-  - "b\xE9ton arm\xE9"
-  outputFloat:
-  - 2
+  inputType: 0a0000000c000000
+  inputInt: 0500000002000000
+  outputType: 0f000000
+  outputInt: 02000000
   time: 1

@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: TuyauIntelligent
   m_EditorClassIdentifier: 
-  inputName:
-  - "plaques renforc\xE9s"
-  - cables
-  - tuyau
-  inputFloat:
-  - 3
-  - 8
-  - 3
-  outputName:
-  - tuyau intelligent
-  outputFloat:
-  - 4
+  inputType: 04000000080000000e000000
+  inputInt: 030000000800000003000000
+  outputType: 10000000
+  outputInt: 02000000
   time: 2

@@ -5,17 +5,22 @@ using UnityEngine;
 
 public abstract class S_Buildings : MonoBehaviour, IPlaceable
 {
-    [SerializeField] SO_Building buildingBase;
-    public abstract int sizeX { get; set; }
-    public abstract int sizeZ { get; set; }
-    public abstract float X { get; set; }
-    public abstract float Z { get; set; }
 
 
     protected float CooldownTime;
     public int gridScaleX;
     public int gridScaleZ;
+    float _posX;
+    float _posZ;
+    int _sizeX;
+    int _sizeZ;
+    [SerializeField] SO_Building _building;
+    public int sizeZ { get { return _sizeZ; } set { _sizeZ = value; } }
+    public int sizeX { get { return _sizeX; } set { _sizeX = value; } }
+    public float X { get { return _posX; } set { _posX = value; } }
+    public float Z { get { return _posZ; } set { _posZ = value; } }
 
+    public SO_Building buildingBase { get { return _building; } }
 
 
     protected virtual void Start()
@@ -35,6 +40,11 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
         sizeX *= gridX;
         sizeZ *= gridZ;
         transform.localScale = new Vector3(sizeX, 1, sizeZ);
+    }
+    public bool VerifySO(SO_Building building)
+    {
+        if(building==buildingBase) return true;
+        return false;
     }
 
 

@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: "C\xE2bles"
   m_EditorClassIdentifier: 
-  inputName:
-  - fil de cuivre
-  inputFloat:
-  - 2
-  outputName:
-  - "c\xE2bles"
-  outputFloat:
-  - 1
+  inputType: 07000000
+  inputInt: 01000000
+  outputType: 08000000
+  outputInt: 01000000
   time: 1

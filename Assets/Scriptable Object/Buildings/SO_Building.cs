@@ -16,4 +16,5 @@ public class SO_Building : ScriptableObject
     /*unit display and match variable*/
     public Mesh BuildingMesh;
     public List<ScriptableObject> recipe;
+    
 }
