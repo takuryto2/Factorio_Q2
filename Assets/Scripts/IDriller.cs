@@ -5,8 +5,10 @@ using UnityEngine;
 
 public interface IDriller
 {
-    ItemType ressourceFound{ get; set; }
+    SO_Crafts currentRessource{ get; set; }
     bool TryFindRessources();
+
+    void BeginHarvesting();
     IEnumerator Harvest();
 
     List<ItemType> EndHarvesting();

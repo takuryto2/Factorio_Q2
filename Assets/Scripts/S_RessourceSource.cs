@@ -4,7 +4,7 @@ using UnityEngine;
 public class S_RessourceSource : MonoBehaviour, IRessources, IPlaceable
 {
     [SerializeField]
-    List<ItemType> _ressource;
+    SO_Crafts _ressource;
 
 
     float _posX;
@@ -16,7 +16,7 @@ public class S_RessourceSource : MonoBehaviour, IRessources, IPlaceable
     public float X { get { return _posX; } set { _posX = value; } }
     public float Z { get { return _posZ; } set { _posZ = value; } }
 
-    public List<ItemType> ressourceToMine { get { return _ressource; } }
+    public SO_Crafts ressourceToMine { get { return _ressource; } }
     private void Start()
     {
         X = transform.position.x;
