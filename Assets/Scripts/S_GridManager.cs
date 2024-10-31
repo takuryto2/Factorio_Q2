@@ -30,21 +30,40 @@ public class S_GridManager : MonoBehaviour
     /// Try to create the specified T building type at the Tile corresponding to the given position
     /// return false if the prefab is not a building or if there is not enough space to instantiate it.
     /// </summary>
-    public bool CreateTileAtPosition(Vector3 _pointerPos, GameObject BuildingPrefab)
+    public bool CreateTileAtPosition(Vector3 _pointerPos, GameObject _objectPrefab)
     {
-        if (!BuildingPrefab.TryGetComponent<S_Buildings>(out S_Buildings building))
+        if (!_objectPrefab.TryGetComponent<IPlaceable>(out IPlaceable _objectToPlace))
         {
             Debug.Log("This prefab is not a building");
             return false;
         }
-        if (FindTileAtPosition(_pointerPos, building.buildingBase.sizeX, building.buildingBase.sizeZ, out GameObject tileFound))
+        int SizeX=0;
+        int SizeZ=0;
+        if (_objectToPlace is S_Buildings)
+        {
+            SizeX = (_objectToPlace as S_Buildings).buildingBase.sizeX;
+            SizeZ = (_objectToPlace as S_Buildings).buildingBase.sizeZ;
+        }
+        else if (_objectToPlace is S_BeltBehaviour)
+        {
+            SizeX = (_objectToPlace as S_BeltBehaviour).sizeX;
+            SizeZ = (_objectToPlace as S_BeltBehaviour).sizeZ;
+        }
+        if (SizeX == 0 || SizeZ == 0)
+        {
+            Debug.Log($"Size incorrect : {SizeX}, {SizeZ}");
+            return false;
+        }
+        if (FindTileAtPosition(_pointerPos, SizeX, SizeZ, out GameObject tileFound) )
         {
             Debug.Log("Not enough space");
             return false;
         }
+        
 
-        Vector3 centerPos = FindCenterOfTile(_pointerPos, building.buildingBase.sizeX, building.buildingBase.sizeZ);
-        var newBuilding = Instantiate(BuildingPrefab, centerPos, Quaternion.identity);
+
+            Vector3 centerPos = FindCenterOfTile(_pointerPos, SizeX, SizeZ);
+        var newBuilding = Instantiate(_objectPrefab, centerPos, Quaternion.identity);
         //get the scale of the grid for the Start of the building so it can apply it.
         newBuilding.GetComponent<S_Buildings>().gridScaleX = (int)gridScale.x;
         newBuilding.GetComponent<S_Buildings>().gridScaleZ = (int)gridScale.z;

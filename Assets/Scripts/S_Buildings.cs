@@ -8,8 +8,8 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
 
 
     protected float CooldownTime;
-    public int gridScaleX;
-    public int gridScaleZ;
+    public int _gridScaleX;
+    public int _gridScaleZ;
     float _posX;
     float _posZ;
     int _sizeX;
@@ -22,6 +22,8 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
 
     public SO_Building buildingBase { get { return _building; } }
 
+    public int gridScaleX { get { return _gridScaleX; } set { _gridScaleX = value; } }
+    public int gridScaleZ { get { return _gridScaleZ; } set { _gridScaleZ = value; } }
 
     protected virtual void Start()
     {
@@ -30,12 +32,12 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
         sizeX = buildingBase.sizeX;
         sizeZ = buildingBase.sizeZ;
         transform.localScale = new Vector3(sizeX, 1, sizeZ);
-        adjustSize(gridScaleX, gridScaleZ);
+        AdjustSize(gridScaleX, gridScaleZ);
         X = transform.position.x;
         Z = transform.position.z;
     }
 
-    public void adjustSize(int gridX, int gridZ)
+    public void AdjustSize(int gridX, int gridZ)
     {
         sizeX *= gridX;
         sizeZ *= gridZ;
@@ -46,9 +48,4 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
         if(building==buildingBase) return true;
         return false;
     }
-
-
-
-
-
 }
