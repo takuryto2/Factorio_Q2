@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 1723361189}
   - component: {fileID: 1723361188}
   - component: {fileID: 1723361187}
+  - component: {fileID: 1723361190}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -535,7 +536,7 @@ Rigidbody:
   m_GameObject: {fileID: 1723361186}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 3.5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -548,7 +549,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84
@@ -566,6 +567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+  moveSpeed: 3
+  maxMoveSpeed: 5
+  camera: {fileID: 1802714536}
 --- !u!4 &1723361189
 Transform:
   m_ObjectHideFlags: 0
@@ -583,6 +587,19 @@ Transform:
   - {fileID: 229305568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1723361190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723361186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2073694f959df488dd956cf3d5fb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aaa: {fileID: 2677877090923720141, guid: 6672284fba32df54f8d741037b6cce0a, type: 3}
 --- !u!1 &1802714532
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +611,6 @@ GameObject:
   - component: {fileID: 1802714533}
   - component: {fileID: 1802714536}
   - component: {fileID: 1802714535}
-  - component: {fileID: 1802714534}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -617,19 +633,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 229305568}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1802714534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802714532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2073694f959df488dd956cf3d5fb35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aaa: {fileID: 2677877090923720141, guid: 6672284fba32df54f8d741037b6cce0a, type: 3}
 --- !u!81 &1802714535
 AudioListener:
   m_ObjectHideFlags: 0
@@ -732,7 +735,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1723361188}
+        m_TargetAssemblyTypeName: S_PlayerMovment, Assembly-CSharp
+        m_MethodName: move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6abacd82-00c7-499f-94f6-39dc514dd7ae
     m_ActionName: GameControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
