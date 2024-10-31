@@ -44,7 +44,7 @@ public class S_DrillBehaviour : S_Buildings, IDriller
     {
         while (true)
         {
-            yield return new WaitForSeconds(CooldownTime/currentRessource.time);
+            yield return new WaitForSeconds(CooldownTime*currentRessource.time);
             break;
         }
         Debug.Log("Harvest done");

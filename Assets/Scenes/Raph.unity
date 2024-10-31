@@ -666,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 4993568479635772916, guid: 5466ea6de464fad48be1578f63d5ea5d, type: 3}
       propertyPath: _ressource
       value: 
-      objectReference: {fileID: 11400000, guid: be3ac670d2562e04197d0cff633f98bb, type: 2}
+      objectReference: {fileID: 11400000, guid: 40f7d0a784a5dd046b2f9705c972d198, type: 2}
     - target: {fileID: 4993568479635772916, guid: 5466ea6de464fad48be1578f63d5ea5d, type: 3}
       propertyPath: _ressource.Array.size
       value: 1
