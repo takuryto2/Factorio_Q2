@@ -6,9 +6,9 @@ using UnityEngine;
 public class SO_Crafts : ScriptableObject
 {
     [Header("craft values")]
-    public List<string> inputName;
-    public List<float> inputFloat;
-    public List<string> outputName;
-    public List<float> outputFloat;
+    public List<ItemType> inputType;
+    public List<int> inputInt;
+    public List<ItemType> outputType;
+    public List<int> outputInt;
     public float time; //in seconds
 }

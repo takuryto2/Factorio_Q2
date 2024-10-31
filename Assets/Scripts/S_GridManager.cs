@@ -8,15 +8,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 using UnityEngine.U2D;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Build.Reporting;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Tilemaps;
-using UnityEngine.U2D;
 
 public class S_GridManager : MonoBehaviour
 {
@@ -39,29 +30,47 @@ public class S_GridManager : MonoBehaviour
     /// Try to create the specified T building type at the Tile corresponding to the given position
     /// return false if the prefab is not a building or if there is not enough space to instantiate it.
     /// </summary>
-    public bool CreateTileAtPosition(Vector3 _pointerPos, GameObject BuildingPrefab)
+    public bool CreateTileAtPosition(Vector3 _pointerPos, GameObject _objectPrefab)
     {
-        if (BuildingPrefab.TryGetComponent<S_Buildings>(out S_Buildings building))
+        if (!_objectPrefab.TryGetComponent<IPlaceable>(out IPlaceable _objectToPlace))
         {
-            if(FindTileAtPosition(_pointerPos,building.sizeX,building.sizeZ, out GameObject tileFound))
-            {
-                Debug.Log("Not enough space");
-                return false;
-            }
-            Vector3 centerPos = FindCenterOfTile(_pointerPos, building.sizeX, building.sizeZ);
-            
-            var newBuilding = Instantiate(BuildingPrefab, centerPos, Quaternion.identity);
-
-            //get the scale of the grid for the Start of the building so it can apply it.
-            newBuilding.GetComponent<S_Buildings>().gridScaleX = (int)gridScale.x;
-            newBuilding.GetComponent<S_Buildings>().gridScaleZ = (int)gridScale.z;
-
-            tileCreated.Add(newBuilding.gameObject);
-            return true;
+            Debug.Log("This prefab is not a building");
+            return false;
         }
-        Debug.Log("This prefab is not a building");
-        return false;
+        int SizeX=0;
+        int SizeZ=0;
+        if (_objectToPlace is S_Buildings)
+        {
+            SizeX = (_objectToPlace as S_Buildings).buildingBase.sizeX;
+            SizeZ = (_objectToPlace as S_Buildings).buildingBase.sizeZ;
+        }
+        else if (_objectToPlace is S_BeltBehaviour)
+        {
+            SizeX = (_objectToPlace as S_BeltBehaviour).sizeX;
+            SizeZ = (_objectToPlace as S_BeltBehaviour).sizeZ;
+        }
+        if (SizeX == 0 || SizeZ == 0)
+        {
+            Debug.Log($"Size incorrect : {SizeX}, {SizeZ}");
+            return false;
+        }
+        if (FindTileAtPosition(_pointerPos, SizeX, SizeZ, out GameObject tileFound) )
+        {
+            Debug.Log("Not enough space");
+            return false;
+        }
+        
 
+
+            Vector3 centerPos = FindCenterOfTile(_pointerPos, SizeX, SizeZ);
+        var newBuilding = Instantiate(_objectPrefab, centerPos, Quaternion.identity);
+        //get the scale of the grid for the Start of the building so it can apply it.
+        newBuilding.GetComponent<S_Buildings>().gridScaleX = (int)gridScale.x;
+        newBuilding.GetComponent<S_Buildings>().gridScaleZ = (int)gridScale.z;
+
+        tileCreated.Add(newBuilding.gameObject);
+
+        return true;
     }
     /// <summary>
     /// find the point corresponding to the center of the building in the grid by his size
@@ -73,7 +82,8 @@ public class S_GridManager : MonoBehaviour
 
         // calculate the center by applying the gridScale and the size of the building to the down left corner,
         // returning half the diagonal of the tile : the center of it.
-        Vector3 centerPos = CornerLeft + (new Vector3(gridScale.x * sizeX, 0, gridScale.z * sizeZ) / 2);
+        Vector3 centerPos = new();
+        centerPos = CornerLeft + (new Vector3(gridScale.x * sizeX, 0, gridScale.z * sizeZ)) / 2;
         return centerPos;
     }
 
@@ -86,16 +96,21 @@ public class S_GridManager : MonoBehaviour
     {
         buildingFound = null;
         Vector3 centerOfTile = FindCenterOfTile(buildingPos, sizeX, sizeZ);
-        List<Collider> BuildingTouched= Physics.OverlapBox(centerOfTile, (new Vector3(gridScale.x * sizeX, 0, gridScale.z * sizeZ) / 2)).ToList();
-        foreach (Collider c in BuildingTouched)
+        List<Collider> BuildingTouched = Physics.OverlapBox(centerOfTile, ((new Vector3(gridScale.x * sizeX, 0, gridScale.z * sizeZ) / 2) * 0.8f)).ToList();
+        Collider Found = null;
+        BuildingTouched = BuildingTouched
+            .Where(collider => collider.TryGetComponent<S_Buildings>(out S_Buildings building))
+            .ToList();
+    
+        if (BuildingTouched.Count>0)
         {
-            if(c.TryGetComponent<S_Buildings>(out S_Buildings building))
-            {
-                Debug.Log("Building Found");
-                buildingFound = building.gameObject;
-                return true;
-            }
+            Found= BuildingTouched.First();
         }
-        return false;
+        
+        if (Found == null) { return false; }
+
+        buildingFound =Found.gameObject;
+        Debug.Log("Building Found");
+        return true;
     }
 }

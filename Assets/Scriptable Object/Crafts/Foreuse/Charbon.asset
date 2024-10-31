@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: Charbon
   m_EditorClassIdentifier: 
-  inputName:
-  - noeud de charbon
-  inputFloat:
-  - 0
-  outputName:
-  - charbon
-  outputFloat:
-  - 1
+  inputType: 
+  inputInt: 
+  outputType: 0b000000
+  outputInt: 01000000
   time: 2

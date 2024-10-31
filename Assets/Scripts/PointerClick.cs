@@ -17,12 +17,14 @@ public class PointerClick : MonoBehaviour
         
         if (context.started)
         {
-            Ray mouseRay= Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray mouseRay= new();
+            mouseRay= Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(mouseRay, out RaycastHit hit))
             {
                 if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
                 {
+                    Debug.Log(hit.point);
                     grid.CreateTileAtPosition(hit.point, aaa);
                     return;
                 }

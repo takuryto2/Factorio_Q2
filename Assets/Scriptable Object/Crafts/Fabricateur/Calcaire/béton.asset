@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
-  m_Name: Craft_Data
+  m_Name: "b\xE9ton"
   m_EditorClassIdentifier: 
-  inputName:
-  - calcaire
-  inputFloat:
-  - 3
-  outputName:
-  - "b\xE9ton"
-  outputFloat:
-  - 1
+  inputType: 09000000
+  inputInt: 03000000
+  outputType: 0a000000
+  outputInt: 01000000
   time: 1

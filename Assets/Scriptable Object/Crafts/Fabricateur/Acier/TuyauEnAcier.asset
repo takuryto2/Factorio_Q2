@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: TuyauEnAcier
   m_EditorClassIdentifier: 
-  inputName:
-  - "lingot d\u2019acier"
-  inputFloat:
-  - 2
-  outputName:
-  - tuyau en acier
-  outputFloat:
-  - 1
+  inputType: 0c000000
+  inputInt: 02000000
+  outputType: 0e000000
+  outputInt: 01000000
   time: 1

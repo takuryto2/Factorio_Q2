@@ -12,14 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: LingotD'acier
   m_EditorClassIdentifier: 
-  inputName:
-  - minerais de fer
-  - charbon
-  inputFloat:
-  - 1
-  - 2
-  outputName:
-  - "lingot d\u2019acier"
-  outputFloat:
-  - 1
+  inputType: 000000000b000000
+  inputInt: 0200000001000000
+  outputType: 0c000000
+  outputInt: 01000000
   time: 1
