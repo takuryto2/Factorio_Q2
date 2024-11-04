@@ -6,12 +6,19 @@ public class S_RessourceSource : MonoBehaviour, IRessources, IPlaceable
     [SerializeField]
     SO_Crafts _ressource;
 
-    public float X { get { return X; } set { X = value; } }
-    public float Z { get { return Z; } set { Z = value; } }
-    public int sizeX { get { return sizeX; } private set { sizeX = value; } }
-    public int sizeZ { get { return sizeX; } private set { sizeX = value; } }
-    public int gridScaleX { get { return gridScaleX; } set { gridScaleX = value; } }
-    public int gridScaleZ { get { return gridScaleZ; } set { gridScaleZ = value; } }
+    protected float CooldownTime;
+    public int _gridScaleX;
+    public int _gridScaleZ;
+    float _posX;
+    float _posZ;
+    int _sizeX;
+    int _sizeZ;
+    public int sizeZ { get { return _sizeZ; } set { _sizeZ = value; } }
+    public int sizeX { get { return _sizeX; } set { _sizeX = value; } }
+    public float X { get { return _posX; } set { _posX = value; } }
+    public float Z { get { return _posZ; } set { _posZ = value; } }
+    public int gridScaleX { get { return _gridScaleX; } set { _gridScaleX = value; } }
+    public int gridScaleZ { get { return _gridScaleZ; } set { _gridScaleZ = value; } }
     public SO_Crafts ressourceToMine { get { return _ressource; } }
 
     public void AdjustSize(int gridX, int gridZ)
