@@ -56,17 +56,26 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Toolbar"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""f82da5fa-10c8-44b3-9afd-94444842d10a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""242200f3-1036-46db-9272-a9052c990048"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""LeftMouse"",
                     ""type"": ""Button"",
-                    ""id"": ""242200f3-1036-46db-9272-a9052c990048"",
+                    ""id"": ""15c082c0-0f83-4424-8d99-af73533d5e49"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -219,56 +228,12 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2808d197-0060-47c0-b948-4c1d3a058b85"",
-                    ""path"": ""<Keyboard>/6"",
+                    ""id"": ""75b00cc8-d36e-4d63-9d10-078e8777f1f2"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6cc05b26-92d3-4a14-ab88-8a961788cf59"",
-                    ""path"": ""<Keyboard>/7"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Toolbar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8ad3892f-b5c5-41a2-a6e9-c296962607ac"",
-                    ""path"": ""<Keyboard>/8"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Toolbar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0119c2f9-6705-47ac-80a3-d80f9b29115e"",
-                    ""path"": ""<Keyboard>/9"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Toolbar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0d60c8ee-07db-4f9c-b3a1-20ab7b3451d0"",
-                    ""path"": ""<Keyboard>/0"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""LeftMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -345,6 +310,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         m_GameControls_MousePos = m_GameControls.FindAction("Mouse Pos", throwIfNotFound: true);
         m_GameControls_Toolbar = m_GameControls.FindAction("Toolbar", throwIfNotFound: true);
         m_GameControls_Pause = m_GameControls.FindAction("Pause", throwIfNotFound: true);
+        m_GameControls_LeftMouse = m_GameControls.FindAction("LeftMouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -411,6 +377,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
     private readonly InputAction m_GameControls_MousePos;
     private readonly InputAction m_GameControls_Toolbar;
     private readonly InputAction m_GameControls_Pause;
+    private readonly InputAction m_GameControls_LeftMouse;
     public struct GameControlsActions
     {
         private @GameController m_Wrapper;
@@ -420,6 +387,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         public InputAction @MousePos => m_Wrapper.m_GameControls_MousePos;
         public InputAction @Toolbar => m_Wrapper.m_GameControls_Toolbar;
         public InputAction @Pause => m_Wrapper.m_GameControls_Pause;
+        public InputAction @LeftMouse => m_Wrapper.m_GameControls_LeftMouse;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -444,6 +412,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @LeftMouse.started += instance.OnLeftMouse;
+            @LeftMouse.performed += instance.OnLeftMouse;
+            @LeftMouse.canceled += instance.OnLeftMouse;
         }
 
         private void UnregisterCallbacks(IGameControlsActions instance)
@@ -463,6 +434,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @LeftMouse.started -= instance.OnLeftMouse;
+            @LeftMouse.performed -= instance.OnLeftMouse;
+            @LeftMouse.canceled -= instance.OnLeftMouse;
         }
 
         public void RemoveCallbacks(IGameControlsActions instance)
@@ -532,5 +506,6 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         void OnMousePos(InputAction.CallbackContext context);
         void OnToolbar(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLeftMouse(InputAction.CallbackContext context);
     }
 }

@@ -34,12 +34,12 @@
                 },
                 {
                     "name": "Toolbar",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "f82da5fa-10c8-44b3-9afd-94444842d10a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pause",
@@ -197,61 +197,6 @@
                     "name": "",
                     "id": "a9c9dcea-735d-4764-90b9-cd8ddcda0533",
                     "path": "<Keyboard>/5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toolbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2808d197-0060-47c0-b948-4c1d3a058b85",
-                    "path": "<Keyboard>/6",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toolbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6cc05b26-92d3-4a14-ab88-8a961788cf59",
-                    "path": "<Keyboard>/7",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toolbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ad3892f-b5c5-41a2-a6e9-c296962607ac",
-                    "path": "<Keyboard>/8",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toolbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0119c2f9-6705-47ac-80a3-d80f9b29115e",
-                    "path": "<Keyboard>/9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toolbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0d60c8ee-07db-4f9c-b3a1-20ab7b3451d0",
-                    "path": "<Keyboard>/0",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
