@@ -9,13 +9,30 @@ public class S_RessourceBehaviour : MonoBehaviour
     Vector3 originalPos;
     float timer = 0;
     bool isCoroutineRunning=false;
+    public ItemType ressourceType=ItemType.IRONORE;
 
+    public void SetRessourceValue(ItemType ressourceToSet, Vector3 initialPos)
+    {
+        Instantiate(gameObject, initialPos, Quaternion.identity);
+        ressourceType = ressourceToSet;
+    }
 
     public void OnTriggerEnter(Collider other)
     {
-        S_BeltBehaviour belt = other.GetComponent<S_BeltBehaviour>();
-        allTargetPos.Enqueue(belt.transform.position+belt.direction);
-        if (!isCoroutineRunning) { StartCoroutine(SlerpToPos()); }
+        if (other.TryGetComponent<S_BeltBehaviour>(out S_BeltBehaviour belt))
+        {
+            allTargetPos.Enqueue(belt.transform.position + (belt.direction * 0.8f));
+            if (!isCoroutineRunning) { StartCoroutine(SlerpToPos()); }
+            return;
+        }
+        if(other.TryGetComponent<S_CrafterBehaviour>(out S_CrafterBehaviour crafter))
+        {
+            if (crafter.TryStoreRessource(ressourceType))
+            {
+                Destroy(gameObject);
+            }
+
+        }
         
     }
     private IEnumerator SlerpToPos()
