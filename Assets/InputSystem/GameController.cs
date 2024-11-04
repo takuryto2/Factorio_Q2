@@ -71,6 +71,15 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""15c082c0-0f83-4424-8d99-af73533d5e49"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +280,17 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""action"": ""Toolbar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75b00cc8-d36e-4d63-9d10-078e8777f1f2"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -345,6 +365,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         m_GameControls_MousePos = m_GameControls.FindAction("Mouse Pos", throwIfNotFound: true);
         m_GameControls_Toolbar = m_GameControls.FindAction("Toolbar", throwIfNotFound: true);
         m_GameControls_Pause = m_GameControls.FindAction("Pause", throwIfNotFound: true);
+        m_GameControls_LeftMouse = m_GameControls.FindAction("LeftMouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -411,6 +432,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
     private readonly InputAction m_GameControls_MousePos;
     private readonly InputAction m_GameControls_Toolbar;
     private readonly InputAction m_GameControls_Pause;
+    private readonly InputAction m_GameControls_LeftMouse;
     public struct GameControlsActions
     {
         private @GameController m_Wrapper;
@@ -420,6 +442,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         public InputAction @MousePos => m_Wrapper.m_GameControls_MousePos;
         public InputAction @Toolbar => m_Wrapper.m_GameControls_Toolbar;
         public InputAction @Pause => m_Wrapper.m_GameControls_Pause;
+        public InputAction @LeftMouse => m_Wrapper.m_GameControls_LeftMouse;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -444,6 +467,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @LeftMouse.started += instance.OnLeftMouse;
+            @LeftMouse.performed += instance.OnLeftMouse;
+            @LeftMouse.canceled += instance.OnLeftMouse;
         }
 
         private void UnregisterCallbacks(IGameControlsActions instance)
@@ -463,6 +489,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @LeftMouse.started -= instance.OnLeftMouse;
+            @LeftMouse.performed -= instance.OnLeftMouse;
+            @LeftMouse.canceled -= instance.OnLeftMouse;
         }
 
         public void RemoveCallbacks(IGameControlsActions instance)
@@ -532,5 +561,6 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         void OnMousePos(InputAction.CallbackContext context);
         void OnToolbar(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLeftMouse(InputAction.CallbackContext context);
     }
 }
