@@ -7,11 +7,16 @@ public class S_DrillBehaviour : S_Buildings, IDriller
 {
     SO_Crafts _ressources;
     public SO_Crafts currentRessource { get { return _ressources; } set { _ressources = value; } }
-//    [SerializeField] GameObject junk;
+    [SerializeField] GameObject junk;
 
     protected override void Start()
     {
         base.Start();
+
+        //debugging variable
+        transform.localScale= Vector3.one;
+
+
         if (TryFindRessources())
         {
             BeginHarvesting();
@@ -54,7 +59,7 @@ public class S_DrillBehaviour : S_Buildings, IDriller
     {
         StartCoroutine(Harvest());
 
- //       Instantiate(junk, junk.transform.position, Quaternion.identity);
+        Instantiate(junk, transform.position+Vector3.left+ Vector3.up, Quaternion.identity);
         return currentRessource.outputType;
         
     }
