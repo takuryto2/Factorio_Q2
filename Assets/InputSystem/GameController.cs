@@ -55,15 +55,6 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Toolbar"",
-                    ""type"": ""Value"",
-                    ""id"": ""f82da5fa-10c8-44b3-9afd-94444842d10a"",
-                    ""expectedControlType"": ""Integer"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""242200f3-1036-46db-9272-a9052c990048"",
@@ -80,6 +71,15 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Toolbar(old)"",
+                    ""type"": ""Value"",
+                    ""id"": ""f82da5fa-10c8-44b3-9afd-94444842d10a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -173,12 +173,23 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""75b00cc8-d36e-4d63-9d10-078e8777f1f2"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8c2c7598-7c62-4c66-a5b9-ca67882d54b7"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -189,7 +200,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -200,7 +211,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -211,7 +222,7 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -222,73 +233,62 @@ public partial class @GameController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2808d197-0060-47c0-b948-4c1d3a058b85"",
+                    ""id"": ""f2015d0e-24dd-4465-aaa2-93968609ba6b"",
                     ""path"": ""<Keyboard>/6"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=6)"",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6cc05b26-92d3-4a14-ab88-8a961788cf59"",
+                    ""id"": ""a947e8cd-02af-4e45-b5e4-ac4ddd598f21"",
                     ""path"": ""<Keyboard>/7"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=7)"",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8ad3892f-b5c5-41a2-a6e9-c296962607ac"",
+                    ""id"": ""2514fb66-e3b5-428e-b8df-3d275dd8edba"",
                     ""path"": ""<Keyboard>/8"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=8)"",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0119c2f9-6705-47ac-80a3-d80f9b29115e"",
+                    ""id"": ""90fe94dc-9220-46c6-90d5-9ff8d9ab7845"",
                     ""path"": ""<Keyboard>/9"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=9)"",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0d60c8ee-07db-4f9c-b3a1-20ab7b3451d0"",
+                    ""id"": ""48f46ffd-6e06-4b6f-98c0-ab0d3a12d100"",
                     ""path"": ""<Keyboard>/0"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=0)"",
                     ""groups"": """",
-                    ""action"": ""Toolbar"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""75b00cc8-d36e-4d63-9d10-078e8777f1f2"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftMouse"",
+                    ""action"": ""Toolbar(old)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -363,9 +363,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         m_GameControls_Movement = m_GameControls.FindAction("Movement", throwIfNotFound: true);
         m_GameControls_Mouse = m_GameControls.FindAction("Mouse", throwIfNotFound: true);
         m_GameControls_MousePos = m_GameControls.FindAction("Mouse Pos", throwIfNotFound: true);
-        m_GameControls_Toolbar = m_GameControls.FindAction("Toolbar", throwIfNotFound: true);
         m_GameControls_Pause = m_GameControls.FindAction("Pause", throwIfNotFound: true);
         m_GameControls_LeftMouse = m_GameControls.FindAction("LeftMouse", throwIfNotFound: true);
+        m_GameControls_Toolbarold = m_GameControls.FindAction("Toolbar(old)", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -430,9 +430,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
     private readonly InputAction m_GameControls_Movement;
     private readonly InputAction m_GameControls_Mouse;
     private readonly InputAction m_GameControls_MousePos;
-    private readonly InputAction m_GameControls_Toolbar;
     private readonly InputAction m_GameControls_Pause;
     private readonly InputAction m_GameControls_LeftMouse;
+    private readonly InputAction m_GameControls_Toolbarold;
     public struct GameControlsActions
     {
         private @GameController m_Wrapper;
@@ -440,9 +440,9 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_GameControls_Movement;
         public InputAction @Mouse => m_Wrapper.m_GameControls_Mouse;
         public InputAction @MousePos => m_Wrapper.m_GameControls_MousePos;
-        public InputAction @Toolbar => m_Wrapper.m_GameControls_Toolbar;
         public InputAction @Pause => m_Wrapper.m_GameControls_Pause;
         public InputAction @LeftMouse => m_Wrapper.m_GameControls_LeftMouse;
+        public InputAction @Toolbarold => m_Wrapper.m_GameControls_Toolbarold;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -461,15 +461,15 @@ public partial class @GameController: IInputActionCollection2, IDisposable
             @MousePos.started += instance.OnMousePos;
             @MousePos.performed += instance.OnMousePos;
             @MousePos.canceled += instance.OnMousePos;
-            @Toolbar.started += instance.OnToolbar;
-            @Toolbar.performed += instance.OnToolbar;
-            @Toolbar.canceled += instance.OnToolbar;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
             @LeftMouse.started += instance.OnLeftMouse;
             @LeftMouse.performed += instance.OnLeftMouse;
             @LeftMouse.canceled += instance.OnLeftMouse;
+            @Toolbarold.started += instance.OnToolbarold;
+            @Toolbarold.performed += instance.OnToolbarold;
+            @Toolbarold.canceled += instance.OnToolbarold;
         }
 
         private void UnregisterCallbacks(IGameControlsActions instance)
@@ -483,15 +483,15 @@ public partial class @GameController: IInputActionCollection2, IDisposable
             @MousePos.started -= instance.OnMousePos;
             @MousePos.performed -= instance.OnMousePos;
             @MousePos.canceled -= instance.OnMousePos;
-            @Toolbar.started -= instance.OnToolbar;
-            @Toolbar.performed -= instance.OnToolbar;
-            @Toolbar.canceled -= instance.OnToolbar;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
             @LeftMouse.started -= instance.OnLeftMouse;
             @LeftMouse.performed -= instance.OnLeftMouse;
             @LeftMouse.canceled -= instance.OnLeftMouse;
+            @Toolbarold.started -= instance.OnToolbarold;
+            @Toolbarold.performed -= instance.OnToolbarold;
+            @Toolbarold.canceled -= instance.OnToolbarold;
         }
 
         public void RemoveCallbacks(IGameControlsActions instance)
@@ -559,8 +559,8 @@ public partial class @GameController: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnMouse(InputAction.CallbackContext context);
         void OnMousePos(InputAction.CallbackContext context);
-        void OnToolbar(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnLeftMouse(InputAction.CallbackContext context);
+        void OnToolbarold(InputAction.CallbackContext context);
     }
 }

@@ -1,13 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Build.Reporting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Tilemaps;
-using UnityEngine.U2D;
-
 
 public class S_GridManager : MonoBehaviour
 {
@@ -46,8 +39,8 @@ public class S_GridManager : MonoBehaviour
         }
         else if (_objectToPlace is S_BeltBehaviour)
         {
-            SizeX = (_objectToPlace as S_BeltBehaviour).sizeX;
-            SizeZ = (_objectToPlace as S_BeltBehaviour).sizeZ;
+            SizeX = 1;
+            SizeZ = 1;
         }
         if (SizeX == 0 || SizeZ == 0)
         {
@@ -63,7 +56,9 @@ public class S_GridManager : MonoBehaviour
 
 
             Vector3 centerPos = FindCenterOfTile(_pointerPos, SizeX, SizeZ);
-        var newBuilding = Instantiate(_objectPrefab, centerPos, Quaternion.identity);
+            centerPos.y = centerPos.y+ _objectPrefab.transform.localScale.y / 2;
+
+        var newBuilding = Instantiate(_objectPrefab, centerPos, _objectPrefab.transform.rotation);
         //get the scale of the grid for the Start of the building so it can apply it.
         newBuilding.GetComponent<S_Buildings>().gridScaleX = (int)gridScale.x;
         newBuilding.GetComponent<S_Buildings>().gridScaleZ = (int)gridScale.z;

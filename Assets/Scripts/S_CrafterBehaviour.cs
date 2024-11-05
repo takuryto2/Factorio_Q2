@@ -15,7 +15,6 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
     {
         inventoryRessources = new Dictionary<ItemType, int>();
         base.Start();
-        transform.localScale = Vector3.one;
         for (int i = 0; i < recipeSelected.inputType.Count; i++)
         {
             inventoryRessources.Add(recipeSelected.inputType[i], 0);

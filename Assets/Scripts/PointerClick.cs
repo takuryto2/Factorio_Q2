@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.InputSystem.HID;
 
 public class PointerClick : MonoBehaviour
 {
-    [SerializeField] GameObject aaa;
+    public GameObject prefab;
     Vector3 test;
 
     Vector3 dir;
@@ -25,12 +20,12 @@ public class PointerClick : MonoBehaviour
                 if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
                 {
                     Debug.Log(hit.point);
-                    grid.CreateTileAtPosition(hit.point, aaa);
+                    grid.CreateTileAtPosition(hit.point, prefab);
                     return;
                 }
 
             }
         }
-        
     }
+    
 }

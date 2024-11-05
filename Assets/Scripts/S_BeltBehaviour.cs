@@ -19,10 +19,9 @@ public class S_BeltBehaviour : MonoBehaviour, IPlaceable
     {
         _direction =transform.forward;
 
-        sizeX =(int) transform.localScale.x;
-        sizeZ = (int)transform.localScale.z;
-        //transform.localScale = new Vector3(sizeX, 1, sizeZ);
-        //AdjustSize(gridScaleX, gridScaleZ);
+        sizeX = 1;
+        sizeZ = 1;
+        AdjustSize(gridScaleX, gridScaleZ);
         X = transform.position.x;
         Z = transform.position.z;
     }
@@ -40,7 +39,7 @@ public class S_BeltBehaviour : MonoBehaviour, IPlaceable
     {
         sizeX *= gridX;
         sizeZ *= gridZ;
-        transform.localScale = new Vector3(sizeX, 1, sizeZ);
+        transform.localScale = new Vector3(sizeX*transform.localScale.x, transform.localScale.y, sizeZ * transform.localScale.z);
     }
 
 }
