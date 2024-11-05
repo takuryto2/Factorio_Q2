@@ -15,6 +15,8 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
     int _sizeX;
     int _sizeZ;
     [SerializeField] SO_Building _building;
+    [SerializeField] protected GameObject _ressourcePrefab;
+    protected S_RessourceBehaviour _ressourcePrefabScript;
     public int sizeZ { get { return _sizeZ; } set { _sizeZ = value; } }
     public int sizeX { get { return _sizeX; } set { _sizeX = value; } }
     public float X { get { return _posX; } set { _posX = value; } }
@@ -35,6 +37,7 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
         AdjustSize(gridScaleX, gridScaleZ);
         X = transform.position.x;
         Z = transform.position.z;
+        _ressourcePrefabScript=_ressourcePrefab.GetComponent<S_RessourceBehaviour>();
     }
 
     public void AdjustSize(int gridX, int gridZ)
