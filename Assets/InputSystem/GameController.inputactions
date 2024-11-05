@@ -34,12 +34,12 @@
                 },
                 {
                     "name": "Toolbar",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "f82da5fa-10c8-44b3-9afd-94444842d10a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pause",
