@@ -7,6 +7,8 @@ public class S_RessourceBehaviour : MonoBehaviour
 {
     Queue<Vector3> allTargetPos= new();
     Vector3 originalPos;
+    Vector3 posCheck1;
+    Vector3 posCheck2;
     float timer = 0;
     bool isCoroutineRunning=false;
     public ItemType ressourceType=ItemType.IRONORE;
@@ -25,15 +27,21 @@ public class S_RessourceBehaviour : MonoBehaviour
             if (!isCoroutineRunning) { StartCoroutine(SlerpToPos()); }
             return;
         }
+        
         if(other.TryGetComponent<S_CrafterBehaviour>(out S_CrafterBehaviour crafter))
         {
             if (crafter.TryStoreRessource(ressourceType))
             {
                 Destroy(gameObject);
             }
-
         }
-        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.TryGetComponent<S_BeltBehaviour>(out S_BeltBehaviour belt))
+        {
+            StartCoroutine(IsMoving());
+        }
     }
     private IEnumerator SlerpToPos()
     {
@@ -58,5 +66,17 @@ public class S_RessourceBehaviour : MonoBehaviour
         }
         isCoroutineRunning = false;
         yield return null;
+    }
+
+    private IEnumerator IsMoving()
+    {
+        yield return new WaitForSeconds(2f);
+        posCheck1 = gameObject.transform.localPosition;
+        yield return new WaitForSeconds(5f);
+        posCheck2 = gameObject.transform.localPosition;
+        if (posCheck1 == posCheck2)
+        {
+            Destroy(gameObject);
+        }
     }
 }
