@@ -12,6 +12,10 @@ public class S_RessourceBehaviour : MonoBehaviour
     float timer = 0;
     bool isCoroutineRunning=false;
     public ItemType ressourceType=ItemType.IRONORE;
+    private void Start()
+    {
+        StartCoroutine(IsMoving());
+    }
 
     public void SetRessourceValue(ItemType ressourceToSet, Vector3 initialPos)
     {
