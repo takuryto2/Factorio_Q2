@@ -67,7 +67,7 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
     {
         for (int i = 0; i < recipeSelected.outputInt.Count; i++)
         {
-            _ressourcePrefabScript.SetRessourceValue(recipeSelected.outputType[i], transform.position + Vector3.left + Vector3.up);
+            _ressourcePrefabScript.SetRessourceValue(recipeSelected.outputType[i], posToSpawnRessources);
         }
         TryLaunchCraft();
         return recipeSelected.outputType;

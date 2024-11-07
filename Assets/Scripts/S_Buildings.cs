@@ -17,6 +17,7 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
     [SerializeField] SO_Building _building;
     [SerializeField] protected GameObject _ressourcePrefab;
     protected S_RessourceBehaviour _ressourcePrefabScript;
+    protected Vector3 posToSpawnRessources;
     public int sizeZ { get { return _sizeZ; } set { _sizeZ = value; } }
     public int sizeX { get { return _sizeX; } set { _sizeX = value; } }
     public float X { get { return _posX; } set { _posX = value; } }
@@ -29,6 +30,7 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
 
     protected virtual void Start()
     {
+        posToSpawnRessources=transform.GetChild(0).position;
         CooldownTime=buildingBase.cooldownMultiplier;
         GetComponent<MeshFilter>().mesh = buildingBase.BuildingMesh;
         sizeX = buildingBase.sizeX;

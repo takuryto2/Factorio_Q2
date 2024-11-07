@@ -58,7 +58,7 @@ public class S_DrillBehaviour : S_Buildings, IDriller
     {
         StartCoroutine(Harvest());
 
-        _ressourcePrefabScript.SetRessourceValue(currentRessource.outputType[0], transform.position + Vector3.left+Vector3.up);
+        _ressourcePrefabScript.SetRessourceValue(currentRessource.outputType[0], posToSpawnRessources);
         return currentRessource.outputType;
         
     }
