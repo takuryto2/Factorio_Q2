@@ -60,8 +60,8 @@ public class S_GridManager : MonoBehaviour
 
         var newBuilding = Instantiate(_objectPrefab, centerPos, _objectPrefab.transform.rotation);
         //get the scale of the grid for the Start of the building so it can apply it.
-        newBuilding.GetComponent<S_Buildings>().gridScaleX = (int)gridScale.x;
-        newBuilding.GetComponent<S_Buildings>().gridScaleZ = (int)gridScale.z;
+        newBuilding.GetComponent<IPlaceable>().gridScaleX = (int)gridScale.x;
+        newBuilding.GetComponent<IPlaceable>().gridScaleZ = (int)gridScale.z;
 
         tileCreated.Add(newBuilding.gameObject);
 
