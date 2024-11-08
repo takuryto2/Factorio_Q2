@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6550338105400368395}
   - component: {fileID: 8026860911912588367}
   - component: {fileID: 4993568479635772916}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RessourceSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,4 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d8a06823336ff40907139751e531c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ressource: 0
+  _ressource: {fileID: 0}
+  _gridScaleX: 0
+  _gridScaleZ: 0

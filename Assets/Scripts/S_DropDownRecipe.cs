@@ -12,7 +12,7 @@ public class S_DropDownRecipe : MonoBehaviour
 
     private void Start()
     {
-        dropdown = GetComponent<TMP_Dropdown>();
+        dropdown = transform.GetChild(0).GetComponent<TMP_Dropdown>();
         gameObject.SetActive(false);
         
     }
@@ -20,6 +20,11 @@ public class S_DropDownRecipe : MonoBehaviour
     {
         if (ctx.started)
         {
+            if (gameObject.activeSelf)
+            {
+                gameObject.SetActive(!gameObject.activeSelf);
+                return;
+            }
             crafterRef = null;
             Ray mouseRay = new();
             mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);

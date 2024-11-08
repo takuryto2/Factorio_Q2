@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PointerClick : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class PointerClick : MonoBehaviour
         
         if (context.started)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             Ray mouseRay= new();
             mouseRay= Camera.main.ScreenPointToRay(Input.mousePosition);
 
