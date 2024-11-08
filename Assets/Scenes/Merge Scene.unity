@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Width: 100
-  Height: 100
+  height: 100
   gridScale: {x: 1, y: 1, z: 1}
   tileCreated: []
 --- !u!1001 &178713015
@@ -807,9 +807,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+  camera: {fileID: 1259174647}
   moveSpeed: 3
   maxMoveSpeed: 5
-  camera: {fileID: 1259174647}
 --- !u!114 &1681091067
 MonoBehaviour:
   m_ObjectHideFlags: 0
