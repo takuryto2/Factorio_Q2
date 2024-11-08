@@ -9,10 +9,12 @@ public class S_DropDownRecipe : MonoBehaviour
 {
     TMP_Dropdown dropdown;
     private S_CrafterBehaviour crafterRef;
+    private TextMeshProUGUI recipeText;
 
     private void Start()
     {
-        dropdown = transform.GetChild(0).GetComponent<TMP_Dropdown>();
+        recipeText =transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        dropdown = transform.GetChild(1).GetComponent<TMP_Dropdown>();
         gameObject.SetActive(false);
         
     }
@@ -46,6 +48,7 @@ public class S_DropDownRecipe : MonoBehaviour
         List<SO_Crafts> recipeList = crafter.allRecipe;
         List<string> recipeName = recipeList.ConvertAll<string>(new System.Converter<SO_Crafts, string>((recipe) => recipe.name));   
         dropdown.AddOptions(recipeName);
+        recipeText.text = crafter._recipeSelected.name;
     }
 
     public void GiveRecipe()
