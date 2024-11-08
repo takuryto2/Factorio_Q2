@@ -18,13 +18,13 @@ MonoBehaviour:
   sizeZ: 1
   BuildingMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   recipe:
+  - {fileID: 11400000, guid: 0b4a72ead16a7564bb40f8da39f53f49, type: 2}
+  - {fileID: 11400000, guid: 0dad102024c14754baeb09f3df5868df, type: 2}
+  - {fileID: 11400000, guid: 89260008b724a694383b3285c7f2d044, type: 2}
+  - {fileID: 11400000, guid: f8e09a3e9fac3314393be5be300a0678, type: 2}
+  - {fileID: 11400000, guid: 8a3b74d4d851be74ab56b2a18db3a713, type: 2}
+  - {fileID: 11400000, guid: d94820e2e1a55164bb6295c7c67eedfc, type: 2}
   - {fileID: 11400000, guid: e3b38fce1fb91a8489bd8d515ae6aed7, type: 2}
   - {fileID: 11400000, guid: c9103bfacd4e0c041b1e4ddc9b66ca21, type: 2}
-  - {fileID: 11400000, guid: d94820e2e1a55164bb6295c7c67eedfc, type: 2}
   - {fileID: 11400000, guid: e0256516fb88c5f49822835b5f5ef092, type: 2}
   - {fileID: 11400000, guid: 69df151092d520e44a29f2284ebcf1f2, type: 2}
-  - {fileID: 11400000, guid: 8a3b74d4d851be74ab56b2a18db3a713, type: 2}
-  - {fileID: 11400000, guid: f8e09a3e9fac3314393be5be300a0678, type: 2}
-  - {fileID: 11400000, guid: 0b4a72ead16a7564bb40f8da39f53f49, type: 2}
-  - {fileID: 11400000, guid: 89260008b724a694383b3285c7f2d044, type: 2}
-  - {fileID: 11400000, guid: 0dad102024c14754baeb09f3df5868df, type: 2}

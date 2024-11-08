@@ -1,4 +1,4 @@
 public interface IRessources
 {
-    SO_Crafts ressourceToMine {  get; }
+    SO_Crafts _ressourceToMine {  get; }
 }

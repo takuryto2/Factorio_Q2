@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
 
 public interface IDriller
 {
@@ -12,5 +10,4 @@ public interface IDriller
     IEnumerator Harvest();
 
     List<ItemType> EndHarvesting();
-
 }

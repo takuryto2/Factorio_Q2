@@ -8,5 +8,4 @@ public interface ICrafting
     IEnumerator Crafting(SO_Crafts recipe);
 
     List<ItemType> EndCrafting(SO_Crafts recipe);
-
 }

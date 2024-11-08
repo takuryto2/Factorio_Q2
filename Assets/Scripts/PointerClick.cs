@@ -3,10 +3,15 @@ using UnityEngine.InputSystem;
 
 public class PointerClick : MonoBehaviour
 {
-    public GameObject prefab;
-    Vector3 test;
 
+    S_ChangeMode Mode;
+    Vector3 test;
     Vector3 dir;
+
+    private void Start()
+    {
+        Mode = GetComponent<S_ChangeMode>();
+    }
     public void OnClick(InputAction.CallbackContext context)
     {
         
@@ -17,13 +22,7 @@ public class PointerClick : MonoBehaviour
 
             if (Physics.Raycast(mouseRay, out RaycastHit hit))
             {
-                if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
-                {
-                    Debug.Log(hit.point);
-                    grid.CreateTileAtPosition(hit.point, prefab);
-                    return;
-                }
-
+                Mode.modeAction(hit);
             }
         }
     }
