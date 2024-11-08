@@ -7,7 +7,7 @@ public class S_GridManager : MonoBehaviour
     public static S_GridManager Instance;
 
 
-    [SerializeField] int Width, Height;
+    [SerializeField] int Width, height;
 
     // THE SCALE CAN'T BE A FLOAT
     [SerializeField] Vector3Int gridScale = new();
@@ -16,7 +16,7 @@ public class S_GridManager : MonoBehaviour
 
     private void Start()
     {
-        gameObject.transform.localScale = new Vector3(Width, 0.1f, Height);
+        gameObject.transform.localScale = new Vector3(Width, 0.1f, height);
     }
 
     /// <summary>
@@ -27,7 +27,6 @@ public class S_GridManager : MonoBehaviour
     {
         if (!_objectPrefab.TryGetComponent<IPlaceable>(out IPlaceable _objectToPlace))
         {
-            Debug.Log("This prefab is not a building");
             return false;
         }
         int SizeX=0;
@@ -44,12 +43,10 @@ public class S_GridManager : MonoBehaviour
         }
         if (SizeX == 0 || SizeZ == 0)
         {
-            Debug.Log($"Size incorrect : {SizeX}, {SizeZ}");
             return false;
         }
         if (FindTileAtPosition(_pointerPos, SizeX, SizeZ, out GameObject tileFound) )
         {
-            Debug.Log("Not enough space");
             return false;
         }
         
@@ -105,7 +102,6 @@ public class S_GridManager : MonoBehaviour
         if (Found == null) { return false; }
 
         buildingFound =Found.gameObject;
-        Debug.Log("Building Found");
         return true;
     }
 }

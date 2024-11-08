@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 
 public class S_RessourceBehaviour : MonoBehaviour
 {
-    Queue<Vector3> allTargetPos= new();
-    Vector3 originalPos;
-    Vector3 posCheck1;
-    Vector3 posCheck2;
-    float timer = 0;
-    bool isCoroutineRunning=false;
+    private Queue<Vector3> allTargetPos= new();
+    private Vector3 originalPos;
+    private Vector3 posCheck1;
+    private Vector3 posCheck2;
+    private float timer = 0;
+    private bool isCoroutineRunning=false;
     public ItemType ressourceType=ItemType.IRONORE;
     private void Start()
     {

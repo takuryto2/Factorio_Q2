@@ -1,25 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class S_PlayerMovment : MonoBehaviour
 {
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private Camera camera;
     private bool canRotateCam;
     private float yRotation;
     private float moveDirection;
     private Rigidbody rb;
-    [SerializeField] private float rotationSpeed;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxMoveSpeed;
-    [SerializeField] private Camera camera;
+    private Vector3 forceDirection;
+
     private GameController gameController;
     private InputAction move;
-    private Vector3 forceDirection;
-    
 
     private void Awake()
     {
@@ -60,24 +56,24 @@ public class S_PlayerMovment : MonoBehaviour
         return right.normalized;
     }
 
-    public void startRotateCamera(InputAction.CallbackContext context)
+    public void startRotateCamera(InputAction.CallbackContext ctx)
     {
-        if(context.performed)
+        if(ctx.performed)
         {
             canRotateCam = true;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        if(context.canceled)
+        if(ctx.canceled)
         {
             canRotateCam = false;
             Cursor.lockState = CursorLockMode.None;
         }
     }
-    public void rotateCamera(InputAction.CallbackContext context)
+    public void rotateCamera(InputAction.CallbackContext ctx)
     {
         if(canRotateCam)
         {
-            yRotation += Mathf.Clamp(context.ReadValue<Vector2>().x, -rotationSpeed, rotationSpeed);
+            yRotation += Mathf.Clamp(ctx.ReadValue<Vector2>().x, -rotationSpeed, rotationSpeed);
             transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
         }
     }

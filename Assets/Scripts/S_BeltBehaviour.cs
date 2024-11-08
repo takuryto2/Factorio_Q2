@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class S_BeltBehaviour : MonoBehaviour, IPlaceable
 {
-
+    int _sizeX;
+    int _sizeZ;
     public int _gridScaleX;
     public int _gridScaleZ;
     float _posX;
     float _posZ;
-    int _sizeX;
-    int _sizeZ;
     Vector3 _direction;
     Quaternion _rotation;
     
@@ -22,16 +19,15 @@ public class S_BeltBehaviour : MonoBehaviour, IPlaceable
         sizeX = 1;
         sizeZ = 1;
         AdjustSize(gridScaleX, gridScaleZ);
-        X = transform.position.x;
-        Z = transform.position.z;
+        posX = transform.position.x;
+        posZ = transform.position.z;
     }
-
-    public float X { get { return _posX; } set { _posX = value; } }
-    public float Z { get { return _posZ; } set { _posZ = value; } }
-    public int sizeZ { get { return _sizeZ; } set { _sizeZ = value; } }
-    public int sizeX { get { return _sizeX; } set { _sizeX = value; } }
     public int gridScaleX { get { return _gridScaleX; } set { _gridScaleX = value; } }
     public int gridScaleZ { get { return _gridScaleZ; } set { _gridScaleZ = value; } }
+    public float posX { get { return _posX; } set { _posX = value; } }
+    public float posZ { get { return _posZ; } set { _posZ = value; } }    
+    public int sizeX { get { return _sizeX; } set { _sizeX = value; } }
+    public int sizeZ { get { return _sizeZ; } set { _sizeZ = value; } }
     public Vector3 direction { get { return _direction; } private set { _direction = value; } }
     public Quaternion rotation { get { return _rotation; } private set { _rotation = value; } }
 

@@ -12,10 +12,6 @@ public class S_DrillBehaviour : S_Buildings, IDriller
     {
         base.Start();
 
-        //debugging variable
-        transform.localScale= Vector3.one;
-
-
         if (TryFindRessources())
         {
             BeginHarvesting();
@@ -34,9 +30,8 @@ public class S_DrillBehaviour : S_Buildings, IDriller
         {
             ressourceFound=colliders.First();
         }
-        if(ressourceFound == null) { Debug.Log("No ressources nearby."); return false; }
-        currentRessource=ressourceFound.GetComponent<S_RessourceSource>().ressourceToMine;
-        Debug.Log("ressource found");
+        if(ressourceFound == null) { return false; }
+        currentRessource=ressourceFound.GetComponent<S_RessourceSource>()._ressourceToMine;
         return true;
     }
     public void BeginHarvesting()
@@ -51,7 +46,6 @@ public class S_DrillBehaviour : S_Buildings, IDriller
             yield return new WaitForSeconds(CooldownTime*currentRessource.time);
             break;
         }
-        Debug.Log("Harvest done");
         EndHarvesting();
     }
     public List<ItemType> EndHarvesting()
@@ -60,7 +54,6 @@ public class S_DrillBehaviour : S_Buildings, IDriller
 
         _ressourcePrefabScript.SetRessourceValue(currentRessource.outputType[0], posToSpawnRessources);
         return currentRessource.outputType;
-        
     }
 
 
