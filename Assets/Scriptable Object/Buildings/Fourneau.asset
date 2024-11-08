@@ -18,6 +18,6 @@ MonoBehaviour:
   sizeZ: 1
   BuildingMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   recipe:
-  - {fileID: 11400000, guid: 532c7340fa092fd48af8c49debfc2f85, type: 2}
-  - {fileID: 11400000, guid: 5c682f6697d1b6c47a8ffa9828e5b584, type: 2}
   - {fileID: 11400000, guid: ac4f6baeb4915924f8b612cbeba43cb5, type: 2}
+  - {fileID: 11400000, guid: 5c682f6697d1b6c47a8ffa9828e5b584, type: 2}
+  - {fileID: 11400000, guid: 532c7340fa092fd48af8c49debfc2f85, type: 2}

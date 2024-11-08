@@ -11,7 +11,7 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
     public int _gridScaleZ;
     float _posX;
     float _posZ;
-    [SerializeField] SO_Building _building;
+    [SerializeField] protected SO_Building _building;
     [SerializeField] protected GameObject _ressourcePrefab;
     protected S_RessourceBehaviour _ressourcePrefabScript;
     protected Vector3 posToSpawnRessources;

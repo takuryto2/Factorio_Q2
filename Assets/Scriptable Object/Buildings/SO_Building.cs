@@ -15,6 +15,6 @@ public class SO_Building : ScriptableObject
     [Header("display and match variable")]
     /*unit display and match variable*/
     public Mesh BuildingMesh;
-    public List<ScriptableObject> recipe;
+    public List<SO_Crafts> recipe;
     
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class S_CrafterBehaviour : S_Buildings, ICrafting
 {
 
-    public Dictionary<ItemType, int> inventoryRessources { get; set; }
+    public Dictionary<ItemType, int> inventoryRessources {  get; set; }
+    public List<SO_Crafts> allRecipe;
  
 
     public SO_Crafts _recipeSelected;
@@ -13,6 +14,7 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
     bool isCoroutineRunning = false;
     protected override void Start()
     {
+        allRecipe = _building.recipe;
         inventoryRessources = new Dictionary<ItemType, int>();
         base.Start();
         for (int i = 0; i < _recipeSelected.inputType.Count; i++)
