@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6811279389934632671}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: -1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: -2}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
@@ -206,4 +206,5 @@ MonoBehaviour:
   _gridScaleZ: 1
   _building: {fileID: 11400000, guid: 04e20611e3b018043b1fdc58c41fc7d7, type: 2}
   _ressourcePrefab: {fileID: 2677877090923720141, guid: ac6c1a29ed2d3964b9afc81dbc7a726e, type: 3}
+  allRecipe: []
   _recipeSelected: {fileID: 11400000, guid: 0b4a72ead16a7564bb40f8da39f53f49, type: 2}

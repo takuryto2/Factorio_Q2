@@ -54,5 +54,6 @@ public class S_DropDownRecipe : MonoBehaviour
     public void GiveRecipe()
     {
         crafterRef._recipeSelected=crafterRef.allRecipe[dropdown.value];
+        crafterRef.UpdateRecipeIngredients();
     }
 }

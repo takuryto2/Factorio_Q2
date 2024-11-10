@@ -18,8 +18,9 @@ public class S_RessourceBehaviour : MonoBehaviour
 
     public void SetRessourceValue(ItemType ressourceToSet, Vector3 initialPos)
     {
-        Instantiate(gameObject, initialPos, Quaternion.identity);
         ressourceType = ressourceToSet;
+        Instantiate(gameObject, initialPos, Quaternion.identity);
+        
     }
 
     public void OnTriggerEnter(Collider other)

@@ -17,10 +17,7 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
         allRecipe = _building.recipe;
         inventoryRessources = new Dictionary<ItemType, int>();
         base.Start();
-        for (int i = 0; i < _recipeSelected.inputType.Count; i++)
-        {
-            inventoryRessources.Add(_recipeSelected.inputType[i], 0);
-        }
+        UpdateRecipeIngredients();
     }
 
     private bool TryLaunchCraft()
@@ -32,7 +29,7 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
                 return false;
             }
         }
-        if (!isCoroutineRunning) { StartCoroutine(Crafting(_recipeSelected)); return true; }
+        if (!isCoroutineRunning) { BeginningCraft(_recipeSelected); return true; }
         return false;
         
     }
@@ -52,6 +49,10 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
 
     public void BeginningCraft(SO_Crafts recipe)
     {
+        for (int i = 0; i < _recipeSelected.inputInt.Count; i++)
+        {
+            inventoryRessources[_recipeSelected.inputType[i]]-=recipe.inputInt[i];
+        }
         StartCoroutine(Crafting(recipe));
         return;
     }
@@ -71,5 +72,13 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
         }
         TryLaunchCraft();
         return _recipeSelected.outputType;
+    }
+    public void UpdateRecipeIngredients()
+    {
+        inventoryRessources.Clear();
+        for (int i = 0; i<_recipeSelected.inputType.Count; i++)
+        {
+            inventoryRessources.Add(_recipeSelected.inputType[i], 0);
+        }
     }
 }
