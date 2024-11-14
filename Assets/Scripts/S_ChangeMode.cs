@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 
 public class S_ChangeMode : MonoBehaviour
 {
     public GameObject prefab;
     public Action<RaycastHit> modeAction;
+    [SerializeField]private Image image;
 
     private void Start()
     {
@@ -17,11 +19,14 @@ public class S_ChangeMode : MonoBehaviour
         if (modeAction != PlaceTile)
         {
             modeAction = PlaceTile;
+            image.color = Color.white;
             return;
         }
         modeAction=RemoveTile;
+        image.color = new Color(1, 0.92f, 0.13f);
     }
-    public void PlaceTile(RaycastHit hit)
+
+    private void PlaceTile(RaycastHit hit)
     {
         if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
         {
@@ -30,12 +35,12 @@ public class S_ChangeMode : MonoBehaviour
             return;
         }
     }
-    public void RemoveTile(RaycastHit hit)
+
+    private void RemoveTile(RaycastHit hit)
     {
         if (!hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
         {
             Destroy(hit.collider.gameObject);
         }
     }
-
 }
