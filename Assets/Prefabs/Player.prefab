@@ -187,6 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+  camera: {fileID: 0}
+  moveSpeed: 0
+  maxMoveSpeed: 0
 --- !u!54 &7067450836884628248
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -319,4 +322,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2073694f959df488dd956cf3d5fb35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aaa: {fileID: 2677877090923720141, guid: 6672284fba32df54f8d741037b6cce0a, type: 3}

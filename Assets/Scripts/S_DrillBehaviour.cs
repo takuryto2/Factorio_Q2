@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ public class S_DrillBehaviour : S_Buildings, IDriller
     public bool TryFindRessources()
     {
        List<Collider>colliders = Physics
-            .OverlapBox(transform.position, (new Vector3(transform.localScale.x, transform.localScale.y * 2, transform.localScale.z)))
+            .OverlapBox(transform.position, (new Vector3(transform.localScale.x/2, transform.localScale.y * 2, transform.localScale.z/2)))
             .ToList();
         Collider ressourceFound = null;
         colliders=colliders
@@ -56,5 +57,9 @@ public class S_DrillBehaviour : S_Buildings, IDriller
         return currentRessource.outputType;
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, (new Vector3(transform.localScale.x/2, transform.localScale.y * 2, transform.localScale.z/2)));
+    }
 }
