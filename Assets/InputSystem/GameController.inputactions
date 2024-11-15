@@ -78,7 +78,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Show Crafts",
+                    "name": "Build",
                     "type": "Button",
                     "id": "9bdf40f0-8687-4335-be4b-0b5c5eda0481",
                     "expectedControlType": "Button",
@@ -346,7 +346,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Show Crafts",
+                    "action": "Build",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

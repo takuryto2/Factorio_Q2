@@ -104,4 +104,8 @@ public class S_GridManager : MonoBehaviour
         buildingFound =Found.gameObject;
         return true;
     }
+    public Vector3 AdjustToTile(Vector3 pos)
+    {
+        return FindCenterOfTile(pos);
+    }
 }

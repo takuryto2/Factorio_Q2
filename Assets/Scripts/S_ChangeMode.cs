@@ -8,22 +8,44 @@ public class S_ChangeMode : MonoBehaviour
 {
     public GameObject prefab;
     public Action<RaycastHit> modeAction;
-    [SerializeField]private Image image;
+    [SerializeField]private Image destroyImage;
+    [SerializeField] private Image buildImage;
+    [SerializeField]
+    public GameObject arrowPreview;
 
     private void Start()
     {
-        modeAction = PlaceTile;
+        modeAction = NeutralMode;
     }
-    public void ChangeMode(InputAction.CallbackContext ctx)
+    public void DestroyMode(InputAction.CallbackContext ctx)
     {
-        if (modeAction != PlaceTile)
+        if (modeAction == RemoveTile)
         {
-            modeAction = PlaceTile;
-            image.color = Color.white;
+            arrowPreview.SetActive(false);
+            destroyImage.color = Color.white;
+            modeAction = NeutralMode;
+
             return;
         }
-        modeAction=RemoveTile;
-        image.color = new Color(1, 0.92f, 0.13f);
+        arrowPreview.SetActive(false);
+        modeAction =RemoveTile;
+        buildImage.color = Color.white;
+        destroyImage.color = new Color(1, 0.92f, 0.13f);
+    }
+    public void BuildMode(InputAction.CallbackContext ctx)
+    {
+        if (modeAction == PlaceTile)
+        {
+            arrowPreview.SetActive(false);
+            buildImage.color = Color.white;
+            modeAction = NeutralMode;
+            
+            return;
+        }
+        arrowPreview.SetActive(true);
+        modeAction = PlaceTile;
+        destroyImage.color = Color.white;
+        buildImage.color = new Color(0.72f, 0.85f, 0.96f); 
     }
 
     private void PlaceTile(RaycastHit hit)
@@ -42,5 +64,9 @@ public class S_ChangeMode : MonoBehaviour
         {
             Destroy(hit.collider.gameObject);
         }
+    }
+    private void NeutralMode(RaycastHit hit)
+    {
+        return;
     }
 }
