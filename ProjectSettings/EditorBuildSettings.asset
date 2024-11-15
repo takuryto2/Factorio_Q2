@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Merge Scene.unity
     guid: 0b47940506c6f634595ea8d2e1bd3a28
+  - enabled: 1
+    path: Assets/Scenes/Main Scene.unity
+    guid: 75dc1839f4bc86945a1d280c95c2b589
   m_configObjects: {}
