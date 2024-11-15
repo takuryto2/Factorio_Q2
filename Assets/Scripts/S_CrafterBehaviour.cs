@@ -40,6 +40,13 @@ public class S_CrafterBehaviour : S_Buildings, ICrafting
         {
             return false;
         }
+        else
+        {
+            if(inventoryRessources[ressourceType] >= 100)
+            {
+                return false;
+            }
+        }
         inventoryRessources[ressourceType] += 1;
         TryLaunchCraft();
         
