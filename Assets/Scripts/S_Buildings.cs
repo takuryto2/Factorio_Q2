@@ -12,8 +12,7 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
     float _posX;
     float _posZ;
     [SerializeField] protected SO_Building _building;
-    [SerializeField] protected GameObject _ressourcePrefab;
-    protected S_RessourceBehaviour _ressourcePrefabScript;
+    protected PoolSystem _poolSystem;
     protected Vector3 posToSpawnRessources;
     public int gridScaleX { get { return _gridScaleX; } set { _gridScaleX = value; } }
     public int gridScaleZ { get { return _gridScaleZ; } set { _gridScaleZ = value; } }
@@ -34,7 +33,7 @@ public abstract class S_Buildings : MonoBehaviour, IPlaceable
         AdjustSize(gridScaleX, gridScaleZ);
         posX = transform.position.x;
         posZ = transform.position.z;
-        _ressourcePrefabScript=_ressourcePrefab.GetComponent<S_RessourceBehaviour>();
+        _poolSystem=PoolSystem.instance;
     }
 
     public void AdjustSize(int gridX, int gridZ)
