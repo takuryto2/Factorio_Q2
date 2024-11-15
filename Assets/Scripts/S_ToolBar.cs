@@ -7,6 +7,7 @@ public class S_ToolBar : MonoBehaviour
 {
     [SerializeField] List<GameObject> prefabList = new();
     [SerializeField] List<Image> imageList = new();
+    [SerializeField] GameObject arrow;
     S_ChangeMode prefabToPlace;
 
     private void Start()
@@ -19,6 +20,7 @@ public class S_ToolBar : MonoBehaviour
         if (ctx.started && value < prefabList.Count)
         {
             prefabToPlace.prefab = prefabList[value];
+            arrow.transform .rotation=prefabToPlace.transform.rotation;
             for (int i = 0; i <= imageList.Count-1; i++)
             {
                 
