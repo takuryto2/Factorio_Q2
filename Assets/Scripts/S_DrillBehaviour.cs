@@ -52,7 +52,7 @@ public class S_DrillBehaviour : S_Buildings, IDriller
     {
         StartCoroutine(Harvest());
 
-        _ressourcePrefabScript.SetRessourceValue(currentRessource.outputType[0], posToSpawnRessources);
+        _poolSystem.Get(currentRessource.outputType[0], posToSpawnRessources);
         return currentRessource.outputType;
     }
 
