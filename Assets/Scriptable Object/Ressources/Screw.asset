@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9072701213a0cbb4e8cc229cfeb45e25, type: 3}
   m_Name: Screw
   m_EditorClassIdentifier: 
-  acceptedType: 03000000
+  acceptedType: 030000000d000000
   mesh: {fileID: -5754084199372789682, guid: bed8b1a6f443bdb46b427cc30c5d0376, type: 3}
