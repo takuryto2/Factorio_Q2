@@ -19,16 +19,17 @@ public class S_ToolBar : MonoBehaviour
         if (ctx.started && value < prefabList.Count)
         {
             prefabToPlace.prefab = prefabList[value];
-            for (int i = 0; i <= imageList.Count-1; i++)
+            prefabToPlace.arrowPreview.transform.rotation = prefabToPlace.prefab.transform.rotation;
+            for (int i = 0; i <= imageList.Count - 1; i++)
             {
-                
+
                 if (imageList[i] == imageList[value])
                 {
                     Debug.Log(imageList[value]);
                     Debug.Log(imageList[i]);
                     imageList[value].color = new Color(1, 0.92f, 0.13f);
                 }
-                else 
+                else
                 {
                     imageList[i].color = Color.white;
                 }
