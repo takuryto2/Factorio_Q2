@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
 public class S_PlayerMovment : MonoBehaviour
@@ -13,6 +14,8 @@ public class S_PlayerMovment : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxMoveSpeed;
     private Vector3 forceDirection;
+    [SerializeField] float maxCamZoom;
+    [SerializeField] float minCamZoom;
 
     private GameController gameController;
     private InputAction move;
@@ -75,6 +78,18 @@ public class S_PlayerMovment : MonoBehaviour
         {
             yRotation += Mathf.Clamp(ctx.ReadValue<Vector2>().x, -rotationSpeed, rotationSpeed);
             transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
+        }
+    }
+    public void CameraZoom(InputAction.CallbackContext ctx)
+    {
+        if (canRotateCam)
+        {
+            Vector3 yPos = camera.transform.localPosition;
+            Vector3 MouseScrollNormalized= ctx.ReadValue<Vector2>();
+            MouseScrollNormalized.y=Mathf.Clamp(MouseScrollNormalized.y, -1f, 1f);
+            yPos-=MouseScrollNormalized;
+            yPos.y=Mathf.Clamp(yPos.y, minCamZoom, maxCamZoom);
+            camera.transform.localPosition = yPos;
         }
     }
 

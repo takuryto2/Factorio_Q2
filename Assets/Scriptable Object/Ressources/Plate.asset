@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Plate
   m_EditorClassIdentifier: 
   acceptedType: 0200000004000000
-  mesh: {fileID: -5754084199372789682, guid: 47b34e1c383b8ef48a0bc7dd4f41735d, type: 3}
+  mesh: {fileID: -5754084199372789682, guid: 3000b1d3669ad91439aa371027b0b094, type: 3}

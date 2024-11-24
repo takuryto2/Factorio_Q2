@@ -62,7 +62,7 @@ public class S_ChangeMode : MonoBehaviour
 
     private void RemoveTile(RaycastHit hit)
     {
-        if (!hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
+        if (hit.collider.gameObject.layer!=0)
         {
             Destroy(hit.collider.gameObject);
         }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ingot
   m_EditorClassIdentifier: 
   acceptedType: 01000000060000000c000000
-  mesh: {fileID: -5754084199372789682, guid: 7ae4f9b3c85935e4581b0b2dc1122858, type: 3}
+  mesh: {fileID: -5754084199372789682, guid: 96dbfcdab2fb53f47be0d90638eb69d5, type: 3}

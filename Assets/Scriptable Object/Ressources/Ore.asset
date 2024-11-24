@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ore
   m_EditorClassIdentifier: 
   acceptedType: 0000000005000000090000000b000000
-  mesh: {fileID: -5754084199372789682, guid: f13819e843b4d6442adf956106d4924e, type: 3}
+  mesh: {fileID: -5754084199372789682, guid: cefe7cd7a021fb242946712955d3a2c1, type: 3}

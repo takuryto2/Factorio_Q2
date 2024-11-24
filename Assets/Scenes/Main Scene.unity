@@ -4214,6 +4214,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9bdf40f0-8687-4335-be4b-0b5c5eda0481
     m_ActionName: GameControls/Show Crafts[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1681091066}
+        m_TargetAssemblyTypeName: S_PlayerMovment, Assembly-CSharp
+        m_MethodName: CameraZoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3eea7d05-cbc5-4f73-8562-335e241f25ef
+    m_ActionName: GameControls/Zoom[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GameControls
@@ -6177,6 +6193,8 @@ MonoBehaviour:
   camera: {fileID: 1259174647}
   moveSpeed: 3
   maxMoveSpeed: 5
+  maxCamZoom: 12
+  minCamZoom: 3
 --- !u!114 &1681091067
 MonoBehaviour:
   m_ObjectHideFlags: 0

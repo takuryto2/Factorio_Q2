@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87a3d2a967c97047a06aa29494a54b4, type: 3}
   m_Name: Reinforced Concrete
   m_EditorClassIdentifier: 
-  inputType: 0a0000000c000000
+  inputType: 0a0000000d000000
   inputInt: 0500000002000000
   outputType: 0f000000
   outputInt: 02000000

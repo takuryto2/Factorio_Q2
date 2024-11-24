@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Wire
   m_EditorClassIdentifier: 
   acceptedType: 0700000008000000
-  mesh: {fileID: -5754084199372789682, guid: f3397981332f44342a0d0c9e796d64d0, type: 3}
+  mesh: {fileID: -5754084199372789682, guid: 1cc19dac5c8485640a7757503fb3d9bd, type: 3}

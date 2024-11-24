@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Screw
   m_EditorClassIdentifier: 
   acceptedType: 030000000d000000
-  mesh: {fileID: -5754084199372789682, guid: bed8b1a6f443bdb46b427cc30c5d0376, type: 3}
+  mesh: {fileID: -5754084199372789682, guid: e908da31c6c959d4380fa6e9d55a71e6, type: 3}

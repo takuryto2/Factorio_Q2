@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Parpaing
   m_EditorClassIdentifier: 
   acceptedType: 0a0000000f000000
-  mesh: {fileID: -5754084199372789682, guid: 866ca6ea0099a5c4e8a2c172bcfc9ff6, type: 3}
+  mesh: {fileID: -5754084199372789682, guid: f665405716afe7d4d95db16c9c4aa553, type: 3}

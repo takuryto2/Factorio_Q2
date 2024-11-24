@@ -73,9 +73,10 @@ public class PoolSystem : MonoBehaviour
         {
             if (item.acceptedType.Contains(type))
             {
-
+                visual.transform.localScale = item.mesh.transform.localScale;
+                visual.transform.localPosition = item.mesh.transform.localPosition + new Vector3(0,0.1f,0);
                 visual.GetComponentInChildren<MeshFilter>().mesh = item.mesh.sharedMesh;
-                visual.transform.localScale=item.mesh.transform.localScale;
+                
 
             }
         }
