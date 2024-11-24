@@ -23,7 +23,7 @@ public class S_GridManager : MonoBehaviour
     /// Try to create the specified T building type at the Tile corresponding to the given position
     /// return false if the prefab is not a building or if there is not enough space to instantiate it.
     /// </summary>
-    public bool CreateTileAtPosition(Vector3 _pointerPos, GameObject _objectPrefab)
+    public bool CreateTileAtPosition(Vector3 _pointerPos, GameObject _objectPrefab, Vector3 rotation)
     {
         if (!_objectPrefab.TryGetComponent<IPlaceable>(out IPlaceable _objectToPlace))
         {
@@ -56,6 +56,7 @@ public class S_GridManager : MonoBehaviour
             centerPos.y = centerPos.y+ _objectPrefab.transform.localScale.y / 2;
 
         var newBuilding = Instantiate(_objectPrefab, centerPos, _objectPrefab.transform.rotation);
+        newBuilding.transform.Rotate(rotation);
         //get the scale of the grid for the Start of the building so it can apply it.
         newBuilding.GetComponent<IPlaceable>().gridScaleX = (int)gridScale.x;
         newBuilding.GetComponent<IPlaceable>().gridScaleZ = (int)gridScale.z;

@@ -12,6 +12,7 @@ public class S_ChangeMode : MonoBehaviour
     [SerializeField] private Image buildImage;
     [SerializeField]
     public GameObject arrowPreview;
+    
 
     private void Start()
     {
@@ -43,6 +44,7 @@ public class S_ChangeMode : MonoBehaviour
             return;
         }
         arrowPreview.SetActive(true);
+        arrowPreview.transform.rotation = Quaternion.identity;
         modeAction = PlaceTile;
         destroyImage.color = Color.white;
         buildImage.color = new Color(0.72f, 0.85f, 0.96f); 
@@ -53,7 +55,7 @@ public class S_ChangeMode : MonoBehaviour
         if (hit.collider.TryGetComponent<S_GridManager>(out S_GridManager grid))
         {
             Debug.Log(hit.point);
-            grid.CreateTileAtPosition(hit.point, prefab);
+            grid.CreateTileAtPosition(hit.point, prefab, arrowPreview.transform.rotation.eulerAngles);
             return;
         }
     }

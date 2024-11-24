@@ -7,8 +7,8 @@ public class S_Rotate : MonoBehaviour
     {
         if (ctx.started)
         {
-            gameObject.GetComponent<S_ChangeMode>().prefab.transform.Rotate(new Vector3(0, 90, 0));
-            gameObject.GetComponent<S_ChangeMode>().arrowPreview.transform.rotation = gameObject.GetComponent<S_ChangeMode>().prefab.transform.rotation;
+            
+            gameObject.GetComponent<S_ChangeMode>().arrowPreview.transform.Rotate(0,90,0);
         }
     }
 }
